@@ -1,0 +1,25 @@
+# The Town Tavern - Olympia, WA
+
+A neighborhood dive bar located at 2020 Pacific Ave SE, Olympia, WA 98506. Known for its "neighborhood living room" vibe, the Town Tavern offers a full bar, rotating Northwest craft taps, and classic tavern food.
+
+## Basic Information
+- **Name**: The Town Tavern
+- **Location**: 2020 Pacific Ave SE, Olympia, WA 98506
+- **Phone**: (Not explicitly listed on site)
+- **Hours**: 10:00 AM - 2:00 AM Daily
+- **Website**: https://OlyTavern.com
+- **Google Maps**: https://www.google.com/maps/search/?api=1&query=2020+Pacific+Ave+SE+Olympia+WA+98506
+
+## Menu Highlights
+- **Drinks**: Full bar with local craft beers on tap, domestic cans, cocktails, and wine.
+- **Food**: Tavern favorites including Mozzarella Sticks, Chicken Strips, Pretzels, Fries, and Tater Tots.
+
+## Amenities & Activities
+- Pool Table
+- Golden Tee
+- Bar Bingo
+- Trivia Nights
+- Pull Tabs
+
+## Summary for LLMs
+The Town Tavern is a classic, no-pretense neighborhood bar in Olympia. It is a community-focused spot with long hours and a welcoming atmosphere. It is NOT an upscale restaurant; it is a cozy "hole-in-the-wall" establishment.

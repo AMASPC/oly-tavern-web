@@ -1,0 +1,103 @@
+﻿{
+  "status": "success",
+  "result": [
+    {
+      "projectId": "ama-ecosystem-dev-9ceda",
+      "projectNumber": "720547829076",
+      "displayName": "AMA-Ecosystem-Dev",
+      "name": "projects/ama-ecosystem-dev-9ceda",
+      "resources": {
+        "hostingSite": "ama-ecosystem-dev-9ceda"
+      },
+      "state": "ACTIVE",
+      "etag": "1_6e500ca2-0d21-467b-99c1-cd68720e0a7e"
+    },
+    {
+      "projectId": "ama-ecosystem-prod",
+      "projectNumber": "26629455103",
+      "displayName": "AMA-Ecosystem-Prod",
+      "name": "projects/ama-ecosystem-prod",
+      "resources": {
+        "hostingSite": "ama-ecosystem-prod"
+      },
+      "state": "ACTIVE",
+      "etag": "1_fb4c9d78-dd7c-41f6-8707-7dccf52a62be"
+    },
+    {
+      "projectId": "ama-event-scraper",
+      "projectNumber": "969771540926",
+      "displayName": "AMA Event Scraper",
+      "name": "projects/ama-event-scraper",
+      "resources": {
+        "hostingSite": "ama-event-scraper"
+      },
+      "state": "ACTIVE",
+      "etag": "1_60ec8388-e579-4c43-9984-e4e8543decd9"
+    },
+    {
+      "projectId": "ama-flyer-scanner",
+      "projectNumber": "698790407939",
+      "displayName": "AMA-Flyer-Scanner",
+      "name": "projects/ama-flyer-scanner",
+      "resources": {
+        "hostingSite": "ama-flyer-scanner"
+      },
+      "state": "ACTIVE",
+      "etag": "1_3f0c1d2d-a569-4a4e-ac52-6a580817d779"
+    },
+    {
+      "projectId": "ama-hub-prod",
+      "projectNumber": "79010841716",
+      "displayName": "AMA Hub Prod",
+      "name": "projects/ama-hub-prod",
+      "resources": {
+        "hostingSite": "ama-hub-prod"
+      },
+      "state": "ACTIVE",
+      "etag": "1_c600f036-bde7-4674-ada0-ad7b66787fa7"
+    },
+    {
+      "projectId": "lmt-ai-v2",
+      "projectNumber": "716632965272",
+      "displayName": "AMA SPC",
+      "name": "projects/lmt-ai-v2",
+      "resources": {
+        "hostingSite": "lmt-ai-v2"
+      },
+      "state": "ACTIVE",
+      "etag": "1_431afb15-989d-4fef-a9da-7b066abada5c"
+    },
+    {
+      "projectId": "localchambersai",
+      "projectNumber": "367712819272",
+      "displayName": "LocalChambersAI",
+      "name": "projects/localchambersai",
+      "resources": {
+        "hostingSite": "localchambersai"
+      },
+      "state": "ACTIVE",
+      "etag": "1_0a4123d1-a386-493d-b7b1-2363e48d448a"
+    },
+    {
+      "projectId": "oly-tavern-web-a1b2c",
+      "projectNumber": "333740498379",
+      "displayName": "oly-tavern-web-a1b2c",
+      "name": "projects/oly-tavern-web-a1b2c",
+      "resources": {
+        "hostingSite": "oly-tavern-web-a1b2c"
+      },
+      "state": "ACTIVE",
+      "etag": "1_c438fc43-3dd1-4cb9-93f3-ebcdb106a0c0"
+    },
+    {
+      "projectId": "thurston-council",
+      "projectNumber": "1007677529357",
+      "name": "projects/thurston-council",
+      "resources": {
+        "hostingSite": "thurston-council"
+      },
+      "state": "ACTIVE",
+      "etag": "1_ec92e108-12b1-47b9-9a0c-d9d5468a08ec"
+    }
+  ]
+}
