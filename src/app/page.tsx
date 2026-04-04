@@ -1,12 +1,20 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function Home() {
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BarOrPub",
     "name": "The Town Tavern",
-    "image": "https://thetown-tavern.web.app/og-image.jpg", // Placeholder
-    "@id": "https://thetown-tavern.web.app",
-    "url": "https://thetown-tavern.web.app",
-    "telephone": "360-555-0123", // Example, not provided in prompt
+    "image": "https://olytavern.com/og-image.svg",
+    "@id": "https://olytavern.com",
+    "url": "https://olytavern.com",
+    "telephone": "(360) 786-6812",
+    "priceRange": "$$",
+    "servesCuisine": "Tavern Favorites",
+    "hasMenu": "https://olytavern.com/#menu",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2020 Pacific Ave SE",
@@ -17,23 +25,45 @@ export default function Home() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 47.0423,
-      "longitude": -122.8732
+      "latitude": 47.0423377,
+      "longitude": -122.8731113
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "10:00",
-      "closes": "02:00"
-    }
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "10:00",
+        "closes": "23:59"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "02:00"
+      }
+    ]
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const copyAddress = () => {
+    navigator.clipboard.writeText("2020 Pacific Ave SE, Olympia, WA 98506");
+    alert("Address copied to clipboard!");
   };
 
   return (
@@ -84,30 +114,36 @@ export default function Home() {
           {/* Menu Section */}
           <section className="pt-20 grid lg:grid-cols-2 gap-20" id="menu">
             <div className="space-y-8">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 reveal">
                 <div className="h-1 w-12 bg-amber-500" />
                 <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">Tavern Favorites</h2>
               </div>
               <ul className="text-xl md:text-2xl space-y-6 text-stone-300 font-medium list-inside">
-                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2">
+                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2 group">
                   <span>Golden Mozzarella Sticks</span>
                 </li>
-                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2">
-                  <span>Crispy Chicken Strips</span>
+                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2 group">
+                  <div className="flex items-center gap-3">
+                    <span>Crispy Chicken Strips</span>
+                    <span className="text-[10px] bg-amber-500/10 text-amber-500/70 px-2 py-0.5 border border-amber-500/20 uppercase tracking-widest font-bold">Local Favorite</span>
+                  </div>
                 </li>
-                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2">
-                  <span>Salted Pretzels & Mustard</span>
+                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2 group">
+                  <div className="flex items-center gap-3">
+                    <span>Salted Pretzels & Mustard</span>
+                    <span className="text-[10px] bg-stone-700/50 text-stone-400 px-2 py-0.5 uppercase tracking-widest font-bold">Limited Availability</span>
+                  </div>
                 </li>
-                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2">
+                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2 group">
                   <span>Basket of Hot Fries</span>
                 </li>
-                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2">
+                <li className="flex justify-between items-baseline border-b border-stone-800 pb-2 group">
                   <span>Classic Tater Tots</span>
                 </li>
               </ul>
             </div>
             <div className="space-y-8">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 reveal reveal-delay-1">
                 <div className="h-1 w-12 bg-amber-500" />
                 <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">Full Bar</h2>
               </div>
@@ -129,19 +165,27 @@ export default function Home() {
           </section>
 
           {/* Events Section */}
-          <section className="pt-32" id="events">
-            <h2 className="text-4xl md:text-6xl font-black mb-16 uppercase tracking-tighter text-center italic">What&apos;s Happening</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8 text-center uppercase tracking-widest text-xs md:text-sm font-bold">
-              {["Bar Bingo", "Trivia Night", "Pool Table", "Golden Tee", "Pull Tabs"].map((event) => (
-                <div key={event} className="aspect-square flex items-center justify-center p-4 bg-stone-800/40 border border-stone-700/50 hover:bg-stone-800 hover:border-amber-500/50 hover:text-amber-500 transition-all duration-300 cursor-default group">
-                  <span className="group-hover:scale-110 transition-transform">{event}</span>
+          <section className="pt-32 reveal" id="events">
+            <h2 className="text-4xl md:text-6xl font-black mb-16 uppercase tracking-tighter text-center italic">What's Happening</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
+              {[
+                { name: "Bar Bingo", when: "Tuesday Nights", details: "Free to Play" },
+                { name: "Trivia Night", when: "Weekly", details: "Prizes & Drinks" },
+                { name: "Pool Table", when: "Daily", details: "Open Table" },
+                { name: "Golden Tee", when: "Daily", details: "Local Leaderboard" },
+                { name: "Pull Tabs", when: "All Day", details: "Good Luck" }
+              ].map((event) => (
+                <div key={event.name} className="flex flex-col items-center justify-center p-8 bg-stone-800/40 border border-stone-700/50 hover:bg-stone-800 hover:border-amber-500/50 transition-all duration-300 cursor-default group">
+                  <span className="text-amber-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-2">{event.when}</span>
+                  <span className="text-lg font-black uppercase tracking-tighter mb-1 group-hover:scale-105 transition-transform">{event.name}</span>
+                  <span className="text-stone-500 text-[10px] font-medium uppercase tracking-widest">{event.details}</span>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Vibe Section */}
-          <section className="pt-32 pb-20 text-center max-w-4xl mx-auto space-y-12" id="vibe">
+          <section className="pt-32 pb-20 text-center max-w-4xl mx-auto space-y-12 reveal" id="vibe">
             <div className="inline-block px-4 py-1 border border-amber-500/30 text-amber-500/60 uppercase tracking-[0.4em] text-[10px] font-bold">Local Spotlight</div>
             <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">The Vibe</h2>
             <p className="text-2xl md:text-4xl text-stone-300 font-serif leading-relaxed italic opacity-90">
@@ -152,20 +196,30 @@ export default function Home() {
         </main>
 
         {/* Footer */}
-        <footer className="bg-stone-950 py-32 px-6 border-t border-stone-800/50 mt-20">
+        <footer className="bg-stone-950 py-32 px-6 border-t border-stone-800/50 mt-20 reveal">
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 items-start">
             <div className="space-y-6">
               <h3 className="text-3xl font-black uppercase tracking-tighter text-amber-500">The Town Tavern</h3>
-              <address className="not-italic text-stone-400 text-xl leading-relaxed">
-                2020 Pacific Ave SE<br />
-                Olympia, WA 98506
-              </address>
-              <div className="pt-4">
+              <button 
+                className="group cursor-pointer focus:outline-none bg-transparent border-none p-0 text-left w-full" 
+                onClick={copyAddress}
+                aria-label="Copy address to clipboard"
+              >
+                <address className="not-italic text-stone-400 text-xl leading-relaxed group-hover:text-amber-500/80 transition-colors">
+                  2020 Pacific Ave SE<br />
+                  Olympia, WA 98506
+                </address>
+                <span className="text-[10px] text-stone-600 uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Click to copy address</span>
+              </button>
+              <div className="pt-4 flex gap-6">
                  <a 
                   href="https://www.google.com/maps/search/?api=1&query=2020+Pacific+Ave+SE+Olympia+WA+98506"
                   className="text-stone-500 hover:text-amber-500 underline underline-offset-8 transition-colors text-sm font-bold uppercase tracking-widest"
                  >
-                  View on Google Maps
+                  Directions
+                 </a>
+                 <a href="tel:3607866812" className="text-stone-500 hover:text-amber-500 underline underline-offset-8 transition-colors text-sm font-bold uppercase tracking-widest">
+                   Call Us
                  </a>
               </div>
             </div>
@@ -176,13 +230,20 @@ export default function Home() {
                 10:00 AM - 2:00 AM<br />
                 <span className="text-amber-500/80 uppercase text-lg not-italic font-bold tracking-widest">Open Every Day</span>
               </div>
+              <p className="text-stone-600 text-xs italic">Pull tabs & pool available until 2 AM.</p>
             </div>
 
             <div className="space-y-6 md:text-right flex flex-col md:items-end">
-               <span className="text-stone-600 text-sm font-medium">Established in Olympia</span>
+               <div className="flex flex-col md:items-end gap-1">
+                 <span className="text-stone-600 text-sm font-medium uppercase tracking-tighter">Established 1974</span>
+                 <span className="text-stone-700 text-[10px] uppercase tracking-widest">Olympia, Washington</span>
+               </div>
                <div className="h-px w-24 bg-stone-800" />
-               <span className="text-stone-500 text-sm">© {new Date().getFullYear()} The Town Tavern.</span>
-               <span className="text-stone-700 text-[10px] uppercase tracking-widest">Absolutely No Pretense.</span>
+               <div className="flex flex-col md:items-end gap-1">
+                 <span className="text-stone-500 text-sm">© {new Date().getFullYear()} The Town Tavern.</span>
+                 <span className="text-stone-700 text-[10px] uppercase tracking-widest truncate">A Pillar 05 Hardened Site.</span>
+               </div>
+               <a href="#top" className="text-amber-500/40 hover:text-amber-500 text-[10px] font-bold uppercase tracking-widest transition-colors mt-4">Back to Top ↑</a>
             </div>
           </div>
         </footer>

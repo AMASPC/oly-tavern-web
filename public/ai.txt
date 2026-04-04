@@ -1,0 +1,20 @@
+# Oly Tavern — AI Identity & Capability Discovery
+
+[identity]
+name = "The Town Tavern (Olympia)"
+role = "Neighborhood Bar & Pub Website"
+version = "2.0.0-Harden"
+
+[capabilities]
+monitoring = "https://olytavern.com/health.json"
+offline_ready = true
+service_worker = "https://olytavern.com/sw.js"
+streaming_vitals = "https://olytavern.com/api/vitals" (POST only)
+
+[policy]
+crawl_delay = 1
+preferred_ingestion = "json+ld"
+human_contact = "(360) 786-6812"
+
+[notes]
+This is a Pillar-05 compliant static-first site. Do not attempt to crawl `/_next/static/` or internal bundle assets. Refer to `llms.txt` for content summaries.
