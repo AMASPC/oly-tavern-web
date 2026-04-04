@@ -1,0 +1,62 @@
+{
+  "displayName": "Oly Tavern — Production Health & Performance",
+  "dashboardFilters": [],
+  "widgets": [
+    {
+      "title": "Uptime Status (olytavern.com/health.json)",
+      "xyChart": {
+        "dataSets": [
+          {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" resource.type=\"uptime_url\" resource.label.\"host\"=\"olytavern.com\"",
+                "aggregation": {
+                  "alignmentPeriod": "60s",
+                  "perSeriesAligner": "ALIGN_FRACTION_TRUE"
+                }
+              }
+            }
+          }
+        ],
+        "chartOptions": {
+          "mode": "COLOR"
+        }
+      }
+    },
+    {
+      "title": "Global Latency (ms)",
+      "xyChart": {
+        "dataSets": [
+          {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/request_latency\" resource.type=\"uptime_url\" resource.label.\"host\"=\"olytavern.com\"",
+                "aggregation": {
+                  "alignmentPeriod": "60s",
+                  "perSeriesAligner": "ALIGN_MEAN"
+                }
+              }
+            }
+          }
+        ],
+        "chartOptions": {
+          "mode": "COLOR"
+        }
+      }
+    },
+    {
+      "title": "Core Web Vitals - LCP (75th Percentile)",
+      "scorecard": {
+        "timeSeriesQuery": {
+          "timeSeriesFilter": {
+            "filter": "metric.type=\"custom.googleapis.com/web_vitals/lcp\"",
+            "aggregation": {
+              "alignmentPeriod": "3600s",
+              "perSeriesAligner": "ALIGN_PERCENTILE_75"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
