@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "town-tavern-ama-prod"
-  }
+  },
+  "targets": {
+    "oly-tavern-web-a1b2c": {
+      "hosting": {
+        "main": [
+          "town-tavern-ama-prod"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
