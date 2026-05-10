@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://olytavern.com'),
-  title: "The Town Tavern | Olympia's Neighborhood Living Room",
-  description: "Experience the neighborhood vibe at The Town Tavern in Olympia, WA. Cold drinks, tavern favorites, and a friendly crowd. No pretense, just a cozy hole-in-the-wall.",
+  title: "The Towne Tavern | Olympia's Neighborhood Living Room",
+  description: "Experience the neighborhood vibe at The Towne Tavern in Olympia, WA. Cold drinks, tavern favorites, and a friendly crowd. No pretense, just a cozy hole-in-the-wall.",
 };
 
 export default function RootLayout({

@@ -10,7 +10,7 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BarOrPub",
-    "name": "The Town Tavern",
+    "name": "The Towne Tavern",
     "image": "https://olytavern.com/og-image.png",
     "@id": "https://olytavern.com",
     "url": "https://olytavern.com",

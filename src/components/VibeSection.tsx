@@ -6,19 +6,23 @@ export default function VibeSection() {
        <div className="max-w-4xl mx-auto space-y-8">
          <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">Absolutely No Pretense.</h2>
          <p className="text-xl md:text-3xl text-stone-400 font-serif italic leading-relaxed">
-            &ldquo;A cozy hole-in-the-wall where the crowd is tight-knit, the drinks are strong, and everyone knows a friendly face.&rdquo;
+            &ldquo;A cozy hole-in-the-wall where the crowd is tight-knit, the drinks are strong, and everyone knows a friendly face. Whether you're here to play Washington Lotto, grab a quick snack or smokes from the vending machine, or just enjoy good company, you'll fit right in.&rdquo;
          </p>
        </div>
-       <div className="flex flex-wrap justify-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-amber-500/60">
+       <div className="flex flex-wrap justify-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-amber-500/60 max-w-4xl mx-auto leading-loose">
           <span>Bar Bingo</span>
           <span className="text-stone-800">•</span>
-          <span>Classic Arcade</span>
+          <span>Golden Tee Golf</span>
+          <span className="text-stone-800">•</span>
+          <span>Washington Lotto</span>
           <span className="text-stone-800">•</span>
           <span>Pool</span>
           <span className="text-stone-800">•</span>
           <span>Jukebox</span>
           <span className="text-stone-800">•</span>
           <span>Pull Tabs</span>
+          <span className="text-stone-800">•</span>
+          <span>Snacks & Smokes</span>
        </div>
     </section>
   );

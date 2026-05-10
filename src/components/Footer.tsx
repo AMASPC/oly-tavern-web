@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-stone-950 py-24 px-6 border-t border-stone-800/50" id="location">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 items-start">
         <div className="space-y-6">
-          <h3 className="text-3xl font-black uppercase tracking-tighter text-amber-500 italic">The Town Tavern</h3>
+          <h3 className="text-3xl font-black uppercase tracking-tighter text-amber-500 italic">The Towne Tavern</h3>
           <address className="not-italic text-stone-400 text-lg leading-relaxed font-bold">
             2020 Pacific Ave SE<br />
             Olympia, WA 98506
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         <div className="md:text-right flex flex-col md:items-end gap-2">
-            <span className="text-stone-500 text-xs font-bold">© {new Date().getFullYear()} The Town Tavern.</span>
+            <span className="text-stone-500 text-xs font-bold">© {new Date().getFullYear()} The Towne Tavern.</span>
             <span className="text-stone-700 text-[10px] font-black uppercase tracking-[0.3em]">Neighborhood Living Room.</span>
         </div>
       </div>

@@ -1,5 +1,5 @@
 export const businessInfo = {
-  name: "The Town Tavern",
+  name: "The Towne Tavern",
   phone: "360-357-9752",
   address: "2020 Pacific Ave SE, Olympia, WA 98506",
   googleMapsUrl: "https://www.google.com/maps/dir/?api=1&destination=2020+Pacific+Ave+SE+Olympia+WA+98506",
@@ -12,7 +12,7 @@ export const businessInfo = {
 export const jsonLd = {
   "@context": "https://schema.org",
   "@type": "BarOrPub",
-  "name": "The Town Tavern",
+  "name": "The Towne Tavern",
   "image": "https://olytavern.com/og-image.png",
   "@id": "https://olytavern.com",
   "url": "https://olytavern.com",

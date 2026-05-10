@@ -1,12 +1,17 @@
 'use client'
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { weeklyRituals } from '../data/rituals';
 
 export default function RitualsSection() {
-  const currentDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date());
-  const todayRitual = weeklyRituals.find(r => r.day === currentDay);
-  const otherRituals = weeklyRituals.filter(r => r.day !== currentDay);
+  const [currentDay, setCurrentDay] = useState<string>('');
+
+  useEffect(() => {
+    setCurrentDay(new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date()));
+  }, []);
+
+  const todayRitual = currentDay ? weeklyRituals.find(r => r.day === currentDay) : null;
+  const otherRituals = currentDay ? weeklyRituals.filter(r => r.day !== currentDay) : weeklyRituals;
 
   return (
     <section id="rituals" className="max-w-6xl mx-auto px-6 space-y-12">
@@ -26,12 +31,10 @@ export default function RitualsSection() {
             <div className="max-w-3xl space-y-6">
               <span className="text-stone-950/70 text-lg font-black uppercase tracking-[0.4em]">{todayRitual.day}</span>
               <h3 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85]">
-                {currentDay === 'Thursday' ? "Quiet Pints & Classics" : todayRitual.title}
+                {todayRitual.title}
               </h3>
               <p className="text-xl md:text-2xl font-bold leading-relaxed max-w-2xl text-stone-900">
-                {currentDay === 'Thursday' 
-                  ? "Tonight is about the simple things. Cold beer, warm conversation, and the true social baseline of Olympia." 
-                  : todayRitual.detail}
+                {todayRitual.detail}
               </p>
               <div className="inline-block px-6 py-2 bg-stone-950 text-amber-500 text-sm font-black uppercase tracking-widest mt-8">
                 {todayRitual.highlight}

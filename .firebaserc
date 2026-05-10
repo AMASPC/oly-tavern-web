@@ -9,6 +9,13 @@
           "town-tavern-ama-prod"
         ]
       }
+    },
+    "town-tavern-ama-prod": {
+      "hosting": {
+        "main": [
+          "town-tavern-ama-prod"
+        ]
+      }
     }
   },
   "etags": {}

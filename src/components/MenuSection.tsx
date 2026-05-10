@@ -92,7 +92,7 @@ export default function MenuSection() {
 
         {/* Soup Schedule */}
         <div className="pt-20 border-t border-stone-800">
-          <h3 className="text-2xl font-black uppercase tracking-widest text-center mb-10 text-stone-500 italic">Daily Weekend Soups</h3>
+          <h3 className="text-2xl font-black uppercase tracking-widest text-center mb-10 text-stone-500 italic">Homemade Soups</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {soups.map((soup) => (
               <div key={soup.day} className="p-6 bg-stone-950/50 border border-stone-800 text-center space-y-2 hover:border-amber-500 transition-colors">

@@ -1,9 +1,16 @@
-import React from 'react';
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import { weeklyRituals } from '../data/rituals';
 
 export default function Hero() {
-  const currentDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date());
-  const todayRitual = weeklyRituals.find(r => r.day === currentDay);
+  const [currentDay, setCurrentDay] = useState<string>('');
+
+  useEffect(() => {
+    setCurrentDay(new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date()));
+  }, []);
+
+  const todayRitual = currentDay ? weeklyRituals.find(r => r.day === currentDay) : null;
 
   return (
     <header className="relative flex flex-col items-center justify-center min-h-screen pt-20 px-6 text-center overflow-hidden">
@@ -36,7 +43,7 @@ export default function Hero() {
 
         <h1 className="text-6xl md:text-9xl font-black mb-6 tracking-tighter leading-[0.85] uppercase">
           The <br />
-          <span className="text-amber-500">Town Tavern.</span>
+          <span className="text-amber-500">Towne Tavern.</span>
         </h1>
         <p className="text-xl md:text-3xl text-stone-400 font-medium italic opacity-80">
           "Olympia&apos;s Neighborhood Living Room"
