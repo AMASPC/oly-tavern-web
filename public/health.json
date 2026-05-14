@@ -1,0 +1,7 @@
+{
+  "status": "healthy",
+  "service": "oly-tavern-web",
+  "spoke": "olybars",
+  "version": "0.1.0",
+  "platform": "firebase-hosting"
+}

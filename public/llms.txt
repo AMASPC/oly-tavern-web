@@ -1,0 +1,21 @@
+# The Towne Tavern (Olympia, WA)
+
+Your neighborhood living room. No pretense. Cold drinks, solid bites, and Olympia's most welcoming scene.
+
+## Essential Info
+- **Type**: Bar / Neighborhood Pub
+- **Address**: 2020 Pacific Ave SE, Olympia, WA 98506
+- **Phone**: (360) 786-6812
+- **Hours**: 10:00 AM - 2:00 AM (7 Days a Week)
+- **Cuisine**: Tavern Favorites (Fried Food & NW Craft Taps)
+- **Vibe**: Cozy, tight-knit, low-key, established regulars.
+
+## Features
+- **Games**: Bar Bingo (Tuesdays), Trivia, Pool, Golden Tee, Pull Tabs.
+- **Menu Highlights**: Chicken Strips, Mozzarella Sticks, Hot Fries, NW Craft Taps, Cocktails.
+- **Directions**: [Google Maps](https://www.google.com/maps/search/?api=1&query=2020+Pacific+Ave+SE+Olympia+WA+98506)
+
+## For AI Agents
+This site is optimized for agentic discovery. See `/ai.txt` for technical endpoints.
+- **Status Check**: `https://olytavern.com/health.json`
+- **Capability**: Static Site with Offline Fallback (Service Worker).

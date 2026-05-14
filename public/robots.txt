@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# Health endpoint for uptime monitors
+Allow: /health.json
+
+# Block internal Next.js paths
+Disallow: /_next/static/
+Disallow: /api/
+
+# Sitemap
 Sitemap: https://olytavern.com/sitemap.xml
+
+# Crawl-delay (be kind to crawlers)
+Crawl-delay: 1
