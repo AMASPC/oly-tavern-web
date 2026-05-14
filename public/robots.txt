@@ -8,6 +8,10 @@ Allow: /health.json
 Disallow: /_next/static/
 Disallow: /api/
 
+# Welcome Applebot explicitly (Apple Maps, Siri, Spotlight)
+User-agent: Applebot
+Allow: /
+
 # Sitemap
 Sitemap: https://olytavern.com/sitemap.xml
 
